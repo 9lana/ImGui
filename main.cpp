@@ -16,6 +16,7 @@ EGLBoolean hook_eglSawpBuffer(EGLDisplay dpy, EGLSurface surface) {
     if (!g_Initialized) {
         ImGui::CreateContext();
         ImGuiIO& io = ImGui::GetIO();
+        io.IniFilename = nullptr;
         ImGui_ImplOpenGL3_Init("#version 300 es");
         ImGui::StyleColorsDark();
         g_Initialized = true;
