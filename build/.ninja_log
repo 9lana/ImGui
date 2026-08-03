@@ -1,0 +1,9 @@
+# ninja log v7
+5	777	1785649132782963521	CMakeFiles/test.dir/main.cpp.o	3733dccae3e58c70
+20	898	1785649132798963521	CMakeFiles/test.dir/imgui/backends/imgui_impl_opengl3.cpp.o	df8e4e13e34f4997
+11	5580	1785649132786963521	CMakeFiles/test.dir/imgui/imgui_tables.cpp.o	2824bfd1c7279632
+17	9120	1785649132794963521	CMakeFiles/test.dir/imgui/backends/imgui_impl_android.cpp.o	769e54bded003628
+8	11903	1785649132782963521	CMakeFiles/test.dir/imgui/imgui_draw.cpp.o	86945dc5476c673b
+14	12712	1785649132790963521	CMakeFiles/test.dir/imgui/imgui_widgets.cpp.o	2ae905cac25ccb85
+7	18954	1785649132782963521	CMakeFiles/test.dir/imgui/imgui.cpp.o	1b52418bc8838650
+18954	19199	1785649151730963507	libtest.so	824c4b667d8899c4

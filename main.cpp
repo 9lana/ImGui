@@ -31,7 +31,6 @@ EGLBoolean hook_eglSawpBuffer(EGLDisplay dpy, EGLSurface surface) {
     io.DisplaySize = ImVec2((float)w, (float)h);
     
     ImGui_ImplOpenGL3_NewFrame();
-    //ImGui_ImplAndroid_NewFrame();
     ImGui::NewFrame();
     ImGui::SetNextWindowSize(ImVec2(500, 400), ImGuiCond_Always);
     ImGui::Begin("Dear ImGui");
@@ -65,9 +64,4 @@ void lib_main() {
     pthread_create(&trixie, NULL, sylphy, NULL);
     pthread_detach(trixie);
     
-}
-extern "C" jint JNIEXPORT JNI_OnLoad(JavaVM *vm, void *reserved) {
-    JNIEnv *env;
-    vm->GetEnv((void **)&env, JNI_VERSION_1_6);
-    return JNI_VERSION_1_6;
 }

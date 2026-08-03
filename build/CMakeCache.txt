@@ -14,92 +14,74 @@
 # EXTERNAL cache entries
 ########################
 
-//No help, variable specified on the command line.
-ANDROID_ABI:UNINITIALIZED=arm64-v8a
-
-//No help, variable specified on the command line.
-ANDROID_PLATFORM:UNINITIALIZED=android-24
+//Path to a program.
+CMAKE_ADDR2LINE:FILEPATH=/data/data/com.termux/files/usr/bin/llvm-addr2line
 
 //Path to a program.
-CMAKE_ADDR2LINE:FILEPATH=/data/data/com.termux/files/home/android-sdk/ndk/29.0.14206865/toolchains/llvm/prebuilt/linux-arm64/bin/llvm-addr2line
-
-//Archiver
-CMAKE_AR:FILEPATH=/data/data/com.termux/files/home/android-sdk/ndk/29.0.14206865/toolchains/llvm/prebuilt/linux-arm64/bin/llvm-ar
-
-//Flags used by the compiler during all build types.
-CMAKE_ASM_FLAGS:STRING=
-
-//Flags used by the compiler during debug builds.
-CMAKE_ASM_FLAGS_DEBUG:STRING=
-
-//Flags used by the compiler during release builds.
-CMAKE_ASM_FLAGS_RELEASE:STRING=
+CMAKE_AR:FILEPATH=/data/data/com.termux/files/usr/bin/llvm-ar
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
-CMAKE_BUILD_TYPE:STRING=
+CMAKE_BUILD_TYPE:STRING=RelWithDebInfo
 
-//Enable/Disable color output during build.
-CMAKE_COLOR_MAKEFILE:BOOL=ON
+//CXX compiler
+CMAKE_CXX_COMPILER:FILEPATH=/data/data/com.termux/files/usr/bin/c++
 
 //LLVM archiver
-CMAKE_CXX_COMPILER_AR:FILEPATH=/data/data/com.termux/files/home/android-sdk/ndk/29.0.14206865/toolchains/llvm/prebuilt/linux-arm64/bin/llvm-ar
+CMAKE_CXX_COMPILER_AR:FILEPATH=/data/data/com.termux/files/usr/bin/llvm-ar
 
 //`clang-scan-deps` dependency scanner
-CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS:FILEPATH=/data/data/com.termux/files/home/android-sdk/ndk/29.0.14206865/toolchains/llvm/prebuilt/linux-arm64/bin/clang-scan-deps
+CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS:FILEPATH=/data/data/com.termux/files/usr/bin/clang-scan-deps
 
 //Generate index for LLVM archive
-CMAKE_CXX_COMPILER_RANLIB:FILEPATH=/data/data/com.termux/files/home/android-sdk/ndk/29.0.14206865/toolchains/llvm/prebuilt/linux-arm64/bin/llvm-ranlib
+CMAKE_CXX_COMPILER_RANLIB:FILEPATH=/data/data/com.termux/files/usr/bin/llvm-ranlib
 
-//Flags used by the compiler during all build types.
+//Flags used by the CXX compiler during all build types.
 CMAKE_CXX_FLAGS:STRING=
 
-//Flags used by the compiler during debug builds.
-CMAKE_CXX_FLAGS_DEBUG:STRING=
+//Flags used by the CXX compiler during DEBUG builds.
+CMAKE_CXX_FLAGS_DEBUG:STRING=-g
 
 //Flags used by the CXX compiler during MINSIZEREL builds.
 CMAKE_CXX_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
 
-//Flags used by the compiler during release builds.
-CMAKE_CXX_FLAGS_RELEASE:STRING=
+//Flags used by the CXX compiler during RELEASE builds.
+CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 
 //Flags used by the CXX compiler during RELWITHDEBINFO builds.
 CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
-//Libraries linked by default with all C++ applications.
-CMAKE_CXX_STANDARD_LIBRARIES:STRING=-latomic -lm
+//C compiler
+CMAKE_C_COMPILER:FILEPATH=/data/data/com.termux/files/usr/bin/cc
 
 //LLVM archiver
-CMAKE_C_COMPILER_AR:FILEPATH=/data/data/com.termux/files/home/android-sdk/ndk/29.0.14206865/toolchains/llvm/prebuilt/linux-arm64/bin/llvm-ar
+CMAKE_C_COMPILER_AR:FILEPATH=/data/data/com.termux/files/usr/bin/llvm-ar
 
 //`clang-scan-deps` dependency scanner
-CMAKE_C_COMPILER_CLANG_SCAN_DEPS:FILEPATH=/data/data/com.termux/files/home/android-sdk/ndk/29.0.14206865/toolchains/llvm/prebuilt/linux-arm64/bin/clang-scan-deps
+CMAKE_C_COMPILER_CLANG_SCAN_DEPS:FILEPATH=/data/data/com.termux/files/usr/bin/clang-scan-deps
 
 //Generate index for LLVM archive
-CMAKE_C_COMPILER_RANLIB:FILEPATH=/data/data/com.termux/files/home/android-sdk/ndk/29.0.14206865/toolchains/llvm/prebuilt/linux-arm64/bin/llvm-ranlib
+CMAKE_C_COMPILER_RANLIB:FILEPATH=/data/data/com.termux/files/usr/bin/llvm-ranlib
 
-//Flags used by the compiler during all build types.
+//Flags used by the C compiler during all build types.
 CMAKE_C_FLAGS:STRING=
 
-//Flags used by the compiler during debug builds.
-CMAKE_C_FLAGS_DEBUG:STRING=
+//Flags used by the C compiler during DEBUG builds.
+CMAKE_C_FLAGS_DEBUG:STRING=-g
 
 //Flags used by the C compiler during MINSIZEREL builds.
 CMAKE_C_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
 
-//Flags used by the compiler during release builds.
-CMAKE_C_FLAGS_RELEASE:STRING=
+//Flags used by the C compiler during RELEASE builds.
+CMAKE_C_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 
 //Flags used by the C compiler during RELWITHDEBINFO builds.
 CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
-//Libraries linked by default with all C applications.
-CMAKE_C_STANDARD_LIBRARIES:STRING=-latomic -lm
-
 //Path to a program.
-CMAKE_DLLTOOL:FILEPATH=/data/data/com.termux/files/home/android-sdk/ndk/29.0.14206865/toolchains/llvm/prebuilt/linux-arm64/bin/llvm-dlltool
+CMAKE_DLLTOOL:FILEPATH=/data/data/com.termux/files/usr/bin/llvm-dlltool
 
-//Flags used by the linker.
+//Flags used by the linker during all build types.
 CMAKE_EXE_LINKER_FLAGS:STRING=
 
 //Flags used by the linker during DEBUG builds.
@@ -114,6 +96,9 @@ CMAKE_EXE_LINKER_FLAGS_RELEASE:STRING=
 //Flags used by the linker during RELWITHDEBINFO builds.
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
+//Enable/Disable output of build database during the build.
+CMAKE_EXPORT_BUILD_DATABASE:BOOL=
+
 //Enable/Disable output of compile commands during generation.
 CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=
 
@@ -124,12 +109,13 @@ CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=/sdcard/ImGui/build/CMakeFiles/pkgRedire
 CMAKE_INSTALL_PREFIX:PATH=/usr/local
 
 //Path to a program.
-CMAKE_LINKER:FILEPATH=/data/data/com.termux/files/home/android-sdk/ndk/29.0.14206865/toolchains/llvm/prebuilt/linux-arm64/bin/ld.lld
+CMAKE_LINKER:FILEPATH=/data/data/com.termux/files/usr/bin/ld.lld
 
-//Path to a program.
-CMAKE_MAKE_PROGRAM:FILEPATH=/data/data/com.termux/files/usr/bin/make
+//Program used to build from build.ninja files.
+CMAKE_MAKE_PROGRAM:FILEPATH=/data/data/com.termux/files/usr/bin/ninja
 
-//Flags used by the linker during the creation of modules.
+//Flags used by the linker during the creation of modules during
+// all build types.
 CMAKE_MODULE_LINKER_FLAGS:STRING=
 
 //Flags used by the linker during the creation of modules during
@@ -149,13 +135,13 @@ CMAKE_MODULE_LINKER_FLAGS_RELEASE:STRING=
 CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //Path to a program.
-CMAKE_NM:FILEPATH=/data/data/com.termux/files/home/android-sdk/ndk/29.0.14206865/toolchains/llvm/prebuilt/linux-arm64/bin/llvm-nm
+CMAKE_NM:FILEPATH=/data/data/com.termux/files/usr/bin/llvm-nm
 
 //Path to a program.
-CMAKE_OBJCOPY:FILEPATH=/data/data/com.termux/files/home/android-sdk/ndk/29.0.14206865/toolchains/llvm/prebuilt/linux-arm64/bin/llvm-objcopy
+CMAKE_OBJCOPY:FILEPATH=/data/data/com.termux/files/usr/bin/llvm-objcopy
 
 //Path to a program.
-CMAKE_OBJDUMP:FILEPATH=/data/data/com.termux/files/home/android-sdk/ndk/29.0.14206865/toolchains/llvm/prebuilt/linux-arm64/bin/llvm-objdump
+CMAKE_OBJDUMP:FILEPATH=/data/data/com.termux/files/usr/bin/llvm-objdump
 
 //Value Computed by CMake
 CMAKE_PROJECT_COMPAT_VERSION:STATIC=
@@ -172,13 +158,14 @@ CMAKE_PROJECT_NAME:STATIC=ImGui
 //Value Computed by CMake
 CMAKE_PROJECT_SPDX_LICENSE:STATIC=
 
-//Ranlib
-CMAKE_RANLIB:FILEPATH=/data/data/com.termux/files/home/android-sdk/ndk/29.0.14206865/toolchains/llvm/prebuilt/linux-arm64/bin/llvm-ranlib
+//Path to a program.
+CMAKE_RANLIB:FILEPATH=/data/data/com.termux/files/usr/bin/llvm-ranlib
 
 //Path to a program.
-CMAKE_READELF:FILEPATH=/data/data/com.termux/files/home/android-sdk/ndk/29.0.14206865/toolchains/llvm/prebuilt/linux-arm64/bin/llvm-readelf
+CMAKE_READELF:FILEPATH=/data/data/com.termux/files/usr/bin/llvm-readelf
 
-//Flags used by the linker during the creation of dll's.
+//Flags used by the linker during the creation of shared libraries
+// during all build types.
 CMAKE_SHARED_LINKER_FLAGS:STRING=
 
 //Flags used by the linker during the creation of shared libraries
@@ -224,14 +211,11 @@ CMAKE_STATIC_LINKER_FLAGS_RELEASE:STRING=
 // during RELWITHDEBINFO builds.
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
-//Strip
-CMAKE_STRIP:FILEPATH=/data/data/com.termux/files/home/android-sdk/ndk/29.0.14206865/toolchains/llvm/prebuilt/linux-arm64/bin/llvm-strip
+//Path to a program.
+CMAKE_STRIP:FILEPATH=/data/data/com.termux/files/usr/bin/llvm-strip
 
 //Path to a program.
 CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
-
-//The CMake toolchain file
-CMAKE_TOOLCHAIN_FILE:FILEPATH=/data/data/com.termux/files/home/android-sdk/ndk/29.0.14206865/build/cmake/android.toolchain.cmake
 
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
@@ -264,15 +248,15 @@ CMAKE_CACHE_MAJOR_VERSION:INTERNAL=4
 //Minor version of cmake used to create the current loaded cache
 CMAKE_CACHE_MINOR_VERSION:INTERNAL=4
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=0
-//ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
-CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=1
 //Path to CMake executable.
 CMAKE_COMMAND:INTERNAL=/data/data/com.termux/files/usr/bin/cmake
 //Path to cpack program executable.
 CMAKE_CPACK_COMMAND:INTERNAL=/data/data/com.termux/files/usr/bin/cpack
 //Path to ctest program executable.
 CMAKE_CTEST_COMMAND:INTERNAL=/data/data/com.termux/files/usr/bin/ctest
+//ADVANCED property for variable: CMAKE_CXX_COMPILER
+CMAKE_CXX_COMPILER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_COMPILER_AR
 CMAKE_CXX_COMPILER_AR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS
@@ -289,8 +273,8 @@ CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_FLAGS_RELWITHDEBINFO
 CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_CXX_STANDARD_LIBRARIES
-CMAKE_CXX_STANDARD_LIBRARIES-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_COMPILER
+CMAKE_C_COMPILER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_COMPILER_AR
 CMAKE_C_COMPILER_AR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_COMPILER_CLANG_SCAN_DEPS
@@ -307,8 +291,6 @@ CMAKE_C_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_C_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS_RELWITHDEBINFO
 CMAKE_C_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_C_STANDARD_LIBRARIES
-CMAKE_C_STANDARD_LIBRARIES-ADVANCED:INTERNAL=1
 //Set initial state for CMake diagnostics; used to persist state
 // set by command-line options across invocations.
 CMAKE_DIAGNOSTIC_INIT:INTERNAL=CMD_AUTHOR=WARN;CMD_DEPRECATED=WARN;CMD_EXPERIMENTAL=WARN;CMD_INSTALL_ABSOLUTE_DESTINATION=IGNORE;CMD_POLICY=WARN;CMD_UNINITIALIZED=IGNORE;CMD_UNUSED_CLI=WARN
@@ -328,12 +310,14 @@ CMAKE_EXE_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_EXE_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_EXPORT_BUILD_DATABASE
+CMAKE_EXPORT_BUILD_DATABASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_EXPORT_COMPILE_COMMANDS
 CMAKE_EXPORT_COMPILE_COMMANDS-ADVANCED:INTERNAL=1
 //Name of external makefile project generator.
 CMAKE_EXTRA_GENERATOR:INTERNAL=
 //Name of generator.
-CMAKE_GENERATOR:INTERNAL=Unix Makefiles
+CMAKE_GENERATOR:INTERNAL=Ninja
 //Generator instance identifier.
 CMAKE_GENERATOR_INSTANCE:INTERNAL=
 //Name of generator platform.

@@ -7,14 +7,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_library(test SHARED
     main.cpp
-    imgui/imgui.cpp
-    imgui/imgui_draw.cpp
-    imgui/imgui_tables.cpp
-    imgui/imgui_widgets.cpp
+    ImGui/imgui.cpp
+    ImGui/imgui_draw.cpp
+    ImGui/imgui_tables.cpp
+    ImGui/imgui_widgets.cpp
     # imgui/imgui_demo.cpp
 
-    imgui/backends/imgui_impl_android.cpp
-    imgui/backends/imgui_impl_opengl3.cpp
+    ImGui/backends/imgui_impl_android.cpp
+    ImGui/backends/imgui_impl_opengl3.cpp
 
 )
 target_include_directories(test PRIVATE
