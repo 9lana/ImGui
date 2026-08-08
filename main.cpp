@@ -13,6 +13,7 @@
 #include <pthread.h>
 #include <jni.h>
 #include <sys/cdefs.h>
+#include <unistd.h>
 
 
 bool clearMousePos = true, setup = false;
@@ -125,6 +126,7 @@ EGLBoolean hook_eglSawpBuffer(EGLDisplay dpy, EGLSurface surface) {
 
 }
 void *sylphy(void*) {
+    sleep(15);
     void *egl = dlopen("libEGL.so", RTLD_NOW);
     if (!egl) {
         return nullptr;
