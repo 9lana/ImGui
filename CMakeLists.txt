@@ -15,6 +15,9 @@ add_library(test SHARED
 
     ImGui/backends/imgui_impl_android.cpp
     ImGui/backends/imgui_impl_opengl3.cpp
+    ByNameModding/fake_dlfcn.cpp
+    ByNameModding/Il2Cpp.cpp
+    ByNameModding/Tools.cpp
 
 )
 target_include_directories(test PRIVATE
@@ -22,6 +25,8 @@ target_include_directories(test PRIVATE
     ImGui
     ImGui/backends
     Dobby
+    ByNameModding
+    
 )
 target_link_libraries(test
     ${CMAKE_CURRENT_SOURCE_DIR}/Dobby/libdobby.a 
