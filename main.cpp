@@ -6,6 +6,10 @@
 #include "ImGui/backends/imgui_impl_android.h"
 #include "ImGui/backends/imgui_impl_opengl3.h"
 #include "Dobby/dobby.h"
+#include "ByNameModding/Includes.h"
+#include "ByNameModding/fake_dlfcn.h"
+#include "ByNameModding/Il2Cpp.h"
+#include "ByNameModding/Tools.h"
 
 #include <pthread.h>
 #include <jni.h>
