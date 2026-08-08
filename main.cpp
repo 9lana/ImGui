@@ -9,7 +9,6 @@
 #include "ByNameModding/Includes.h"
 #include "ByNameModding/fake_dlfcn.h"
 #include "ByNameModding/Il2Cpp.h"
-#include "ByNameModding/Tools.h"
 
 #include <pthread.h>
 #include <jni.h>
@@ -55,7 +54,7 @@ struct UnityEngine_Touch_Fields {
 };
 
 
-void touch() {
+void touch(bool* mouse) {
     ImGuiIO& io = ImGui::GetIO();
     int (*TouchCount)(void*) = (int (*)(void*)) (Il2CppGetMethodOffset("UnityEngine.dll", "UnityEngine", "Input", "get_touchCount", 0));
     int touchCount = TouchCount(nullptr);
@@ -72,7 +71,7 @@ void touch() {
             case TouchPhase::Ended:
             case TouchPhase::Canceled:
                 io.MouseDown[0] = false;
-                should_clear_mouse_pos = true;
+                *mouse = true;
                 break;
             case TouchPhase::Moved:
                 io.MousePos = ImVec2(touch.m_Position.fields.x, reverseY);
@@ -105,7 +104,7 @@ EGLBoolean hook_eglSawpBuffer(EGLDisplay dpy, EGLSurface surface) {
 
     ImGuiIO& io = ImGui::GetIO();
     io.DisplaySize = ImVec2((float)w, (float)h);
-    touch();
+    touch(&should_clear_mouse_pos);
     ImGui_ImplOpenGL3_NewFrame();
     ImGui::NewFrame();
     ImGui::SetNextWindowSize(ImVec2(500, 400), ImGuiCond_Always);

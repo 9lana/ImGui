@@ -17,7 +17,6 @@ add_library(test SHARED
     ImGui/backends/imgui_impl_opengl3.cpp
     ByNameModding/fake_dlfcn.cpp
     ByNameModding/Il2Cpp.cpp
-    ByNameModding/Tools.cpp
 
 )
 target_include_directories(test PRIVATE
