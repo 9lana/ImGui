@@ -1,7 +1,7 @@
 #include "Includes.h"
 
-#include <KenzGUI/Substrate/SubstrateHook.h>
-#include <KenzGUI/Substrate/CydiaSubstrate.h>
+
+
 
 namespace Tools {
     void Hook(void *target, void *replace, void **backup);
