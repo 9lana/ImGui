@@ -18,7 +18,14 @@ add_library(test SHARED
     ByNameModding/fake_dlfcn.cpp
     ByNameModding/Il2Cpp.cpp
     ByNameModding/Tools.cpp
-    KittyMemory/SubstrateHook.h
+    KittyMemory/SubstrateHook.cpp
+    KittyMemory/KittyArm64.cpp
+    KittyMemory/KittyMemory.cpp
+    KittyMemory/MemoryPatch.cpp
+    KittyMemory/SymbolFinder.cpp
+    KittyMemory/KittyScanner.cpp
+    KittyMemory/SubstrateDebug.cpp
+    KittyMemory/KittyUtils.cpp
 
 )
 target_include_directories(test PRIVATE

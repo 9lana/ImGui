@@ -11,6 +11,13 @@
 #include "ByNameModding/Il2Cpp.h"
 #include "ByNameModding/Tools.h"
 #include "KittyMemory/SubstrateHook.h"
+#include "KittyMemory/CydiaSubstrate.h"
+#include "KittyMemory/KittyArm64.h"
+#include "KittyMemory/MemoryBackup.h"
+#include "KittyMemory/hde64.h"
+#include "KittyMemory/KittyMemory.h"
+#include "KittyMemory/MemoryPatch.h"
+#include "KittyMemory/KittyScanner.h"
 
 #include <pthread.h>
 #include <jni.h>
