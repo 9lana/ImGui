@@ -22,7 +22,6 @@ add_library(test SHARED
     KittyMemory/KittyArm64.cpp
     KittyMemory/KittyMemory.cpp
     KittyMemory/MemoryPatch.cpp
-    KittyMemory/SymbolFinder.cpp
     KittyMemory/KittyScanner.cpp
     KittyMemory/SubstrateDebug.cpp
     KittyMemory/KittyUtils.cpp
