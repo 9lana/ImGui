@@ -1,6 +1,7 @@
 #include <EGL/egl.h>
 #include <GLES3/gl3.h>
 #include <bits/pthread_types.h>
+#include <cstddef>
 #include <dlfcn.h>
 #include "ImGui/imgui.h"
 #include "ImGui/backends/imgui_impl_android.h"
@@ -24,8 +25,7 @@
 #include <sys/cdefs.h>
 #include <unistd.h>
 
-#define m_IL2CPPLIB "libil2cpp.so"
-void* m_IL2CPP = nullptr;
+
 bool clearMousePos = true, setup = false;
 struct UnityEngine_Vector2_Fields {
     float x;
@@ -136,11 +136,11 @@ EGLBoolean hook_eglSawpBuffer(EGLDisplay dpy, EGLSurface surface) {
 
 }
 void *sylphy(void*) {
-    while (!m_IL2CPP) {
-        m_IL2CPP = (void*)Tools::GetBaseAddress(m_IL2CPPLIB);
+    void *base = NULL;
+    while ((base = (void*)Tools::GetBaseAddress("libil2cpp")) == NULL) {
         sleep(1);
     }
-    Il2CppAttach(m_IL2CPPLIB);
+    Il2CppAttach("libil2cpp.so");
     void *egl = dlopen("libEGL.so", RTLD_NOW);
     if (!egl) {
         return nullptr;
