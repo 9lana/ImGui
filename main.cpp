@@ -137,7 +137,7 @@ EGLBoolean hook_eglSawpBuffer(EGLDisplay dpy, EGLSurface surface) {
 }
 void *sylphy(void*) {
     void *base = NULL;
-    while ((base = (void*)Tools::GetBaseAddress("libil2cpp")) == NULL) {
+    while ((base = (void*)Tools::GetBaseAddress("libil2cpp.so")) == NULL) {
         sleep(1);
     }
     Il2CppAttach("libil2cpp.so");
