@@ -24,7 +24,7 @@
 #include <sys/cdefs.h>
 #include <unistd.h>
 
-
+#define m_IL2CPPLIB "libil2cpp.so"
 bool clearMousePos = true, setup = false;
 struct UnityEngine_Vector2_Fields {
     float x;
@@ -135,8 +135,11 @@ EGLBoolean hook_eglSawpBuffer(EGLDisplay dpy, EGLSurface surface) {
 
 }
 void *sylphy(void*) {
-    sleep(15);
-    Il2CppAttach("libil2cpp.so");
+    while (!m_IL2CPP) {
+        m_IL2CPP = Tools::GetBaseAddress(m_IL2CPPLIB);
+        sleep(1);
+    }
+    Il2CppAttach(m_IL2CPPLIB);
     void *egl = dlopen("libEGL.so", RTLD_NOW);
     if (!egl) {
         return nullptr;
