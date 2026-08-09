@@ -18,6 +18,7 @@ add_library(test SHARED
     ByNameModding/fake_dlfcn.cpp
     ByNameModding/Il2Cpp.cpp
     ByNameModding/Tools.cpp
+    KittyMemory/SubstrateHook.h
 
 )
 target_include_directories(test PRIVATE
@@ -26,6 +27,7 @@ target_include_directories(test PRIVATE
     ImGui/backends
     Dobby
     ByNameModding
+    KittyMemory
     
 )
 target_link_libraries(test

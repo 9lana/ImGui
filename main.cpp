@@ -10,6 +10,7 @@
 #include "ByNameModding/fake_dlfcn.h"
 #include "ByNameModding/Il2Cpp.h"
 #include "ByNameModding/Tools.h"
+#include "KittyMemory/SubstrateHook.h"
 
 #include <pthread.h>
 #include <jni.h>
