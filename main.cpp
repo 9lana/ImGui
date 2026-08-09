@@ -25,6 +25,7 @@
 #include <unistd.h>
 
 #define m_IL2CPPLIB "libil2cpp.so"
+void* m_IL2CPP = nullptr;
 bool clearMousePos = true, setup = false;
 struct UnityEngine_Vector2_Fields {
     float x;
