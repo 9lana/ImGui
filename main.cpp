@@ -141,7 +141,7 @@ void *sylphy(void*) {
     // while ((base = (void*)Tools::GetBaseAddress("libil2cpp.so")) == NULL) {
     //     sleep(1);
     // }
-    uintptr_t *base = 0;
+    uintptr_t base = 0;
     while (base == 0) {
         base = GetBaseAdress("libil2cpp.so");
         sleep(1);
