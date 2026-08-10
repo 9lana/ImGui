@@ -1,6 +1,6 @@
 #include "Includes.h"
 
-#include <SubstrateHook.h>
+// #include <SubstrateHook.h>
 #include <CydiaSubstrate.h>
 
 namespace Tools {
