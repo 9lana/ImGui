@@ -2,6 +2,7 @@
 #include <GLES3/gl3.h>
 #include <bits/pthread_types.h>
 #include <cstddef>
+#include <cstdint>
 #include <dlfcn.h>
 #include "ImGui/imgui.h"
 #include "ImGui/backends/imgui_impl_android.h"
@@ -24,7 +25,7 @@
 #include <jni.h>
 #include <sys/cdefs.h>
 #include <unistd.h>
-
+#include "Viscount/memory.h"
 
 bool clearMousePos = true, setup = false;
 struct UnityEngine_Vector2_Fields {
@@ -64,7 +65,6 @@ struct UnityEngine_Touch_Fields {
     float m_AzimuthAngle;
 };
 
-
 void touch(bool* mouse) {
     ImGuiIO& io = ImGui::GetIO();
     int (*TouchCount)(void*) = (int (*)(void*)) (Il2CppGetMethodOffset("UnityEngine.dll", "UnityEngine", "Input", "get_touchCount", 0));
@@ -94,6 +94,7 @@ void touch(bool* mouse) {
         io.MouseDown[0] = false;
     }
 }
+
 EGLBoolean (*orig_eglSwapBuffers)(EGLDisplay dpy, EGLSurface surface);
 EGLBoolean hook_eglSawpBuffer(EGLDisplay dpy, EGLSurface surface) {
     static bool g_Initialized = false;
@@ -136,10 +137,16 @@ EGLBoolean hook_eglSawpBuffer(EGLDisplay dpy, EGLSurface surface) {
 
 }
 void *sylphy(void*) {
-    void *base = NULL;
-    while ((base = (void*)Tools::GetBaseAddress("libil2cpp.so")) == NULL) {
+    // void *base = NULL;
+    // while ((base = (void*)Tools::GetBaseAddress("libil2cpp.so")) == NULL) {
+    //     sleep(1);
+    // }
+    uintptr_t *base = 0;
+    while (base == 0) {
+        base = GetBaseAdress("libil2cpp.so");
         sleep(1);
     }
+
     Il2CppAttach("libil2cpp.so");
     void *egl = dlopen("libEGL.so", RTLD_NOW);
     if (!egl) {
