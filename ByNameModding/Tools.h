@@ -1,7 +1,6 @@
-#include "Includes.h"
-
-// #include <SubstrateHook.h>
-// #include <CydiaSubstrate.h>
+#include <map>
+#include <jni.h>
+#include "dobby/dobby.h"
 
 namespace Tools {
     void Hook(void *target, void *replace, void **backup);
@@ -16,6 +15,7 @@ namespace Tools {
     bool IsPtrValid(void *addr);
 
     uintptr_t GetBaseAddress(const char *name);
+	uintptr_t GetRealOffsets(const char *libraryName, uintptr_t relativeAddr);
     uintptr_t GetEndAddress(const char *name);
     uintptr_t FindPattern(const char *lib, const char* pattern);
 
