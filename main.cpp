@@ -108,8 +108,8 @@ EGLBoolean hook_eglSawpBuffer(EGLDisplay dpy, EGLSurface surface) {
         g_Initialized = true;
     }
 
-    bool idk = false;
-    float value = 0.0f;
+    static bool idk = false;
+    static float value = 0.0f;
     EGLint w, h;
     eglQuerySurface(dpy, surface, EGL_WIDTH, &w);
     eglQuerySurface(dpy, surface, EGL_HEIGHT, &h);
@@ -119,7 +119,7 @@ EGLBoolean hook_eglSawpBuffer(EGLDisplay dpy, EGLSurface surface) {
     touch(&should_clear_mouse_pos);
     ImGui_ImplOpenGL3_NewFrame();
     ImGui::NewFrame();
-    ImGui::SetNextWindowSize(ImVec2(500, 400), ImGuiCond_Always);
+    ImGui::SetNextWindowSize(ImVec2(500, 400), ImGuiCond_FirstUseEver);
     ImGui::Begin("Dear ImGui");
     ImGui::Text("Android!");
     ImGui::Checkbox("Click", &idk);
