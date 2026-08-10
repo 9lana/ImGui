@@ -14,6 +14,6 @@ uintptr_t GetBaseAdress(char* libname) {
         }
     
     }
-    fclose(file)
+    fclose(file);
     return 0;
 }
