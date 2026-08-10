@@ -1,7 +1,7 @@
 #include "Includes.h"
 
 // #include <SubstrateHook.h>
-#include <CydiaSubstrate.h>
+// #include <CydiaSubstrate.h>
 
 namespace Tools {
     void Hook(void *target, void *replace, void **backup);
