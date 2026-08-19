@@ -11,7 +11,7 @@
 #include "ByNameModding/Includes.h"
 #include "ByNameModding/fake_dlfcn.h"
 #include "ByNameModding/Il2Cpp.h"
-// #include "ByNameModding/Tools.h"
+
 
 
 #include <pthread.h>
@@ -103,6 +103,7 @@ EGLBoolean hook_eglSawpBuffer(EGLDisplay dpy, EGLSurface surface) {
 
     static bool idk = false;
     static float value = 0.0f;
+    static bool debug = false;
     EGLint w, h;
     eglQuerySurface(dpy, surface, EGL_WIDTH, &w);
     eglQuerySurface(dpy, surface, EGL_HEIGHT, &h);
@@ -118,7 +119,14 @@ EGLBoolean hook_eglSawpBuffer(EGLDisplay dpy, EGLSurface surface) {
     ImGui::Checkbox("Click", &idk);
     ImGui::SliderFloat("Value",&value,0.0f,100.0f);
     ImGui::Text("Bye!");
+    ImGui::Checkbox("Debug Menu", &debug);
     ImGui::End(); 
+    if (debug) {
+        ImGui::Begin("Debug");
+        ImGui::Text("Debug information");
+        ImGui::Text("FPS %.1f", ImGui::GetIO().Framerate);
+        ImGui::End();
+    }
     ImGui::Render();
     
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
