@@ -98,6 +98,7 @@ EGLBoolean hook_eglSawpBuffer(EGLDisplay dpy, EGLSurface surface) {
         io.IniFilename = nullptr;
         ImGui_ImplOpenGL3_Init("#version 300 es");
         ImGui::StyleColorsDark();
+        ImGui::GetStyle().ScaleAllSizes(2.0f);
         g_Initialized = true;
     }
 
